@@ -3,6 +3,9 @@
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
 
+alias python=python3
+alias pip=pip3
+
 # iterm 2 title
 function title {
     echo -ne "\033]0;"$*"\007"
