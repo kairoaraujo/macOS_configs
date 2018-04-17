@@ -11,6 +11,17 @@ function title {
     echo -ne "\033]0;"$*"\007"
 }
 
+alias h='cat /etc/hosts'
+
+alias venv_activate='. venv/bin/activate'
+alias venv_create='python -m venv venv'
+alias venv_reqs='pip install -r requirements.txt'
+
+# MySQL Path
+#################################################
+PATH="/usr/local/mysql/bin:${PATH}"
+export PATH
+
 #################################################
 # Ansible Dev
 #################################################
@@ -83,4 +94,10 @@ function ansible_test_module {
     echo "validate-modules --format json for doc"
     test/sanity/validate-modules/validate-modules --format json lib/ansible/modules/${2}/${1}.py —exclude '^(lib/ansible/modules/utilities/logic/async_status.py|lib/ansible/modules/utilities/helper/_accelerate.py)' --base-branch origin/devel
   fi
+}
+
+. ~/.bash_consume_profile
+
+function docker_ips {
+  docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}} {{ .Name }}' | sed 's/ \// /'
 }
