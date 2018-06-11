@@ -96,8 +96,6 @@ function ansible_test_module {
   fi
 }
 
-. ~/.bash_consume_profile
-
 function docker_ips {
   docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}} {{ .Name }}' | sed 's/ \// /'
 }
