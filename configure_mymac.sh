@@ -14,3 +14,6 @@ pip install dbgp pep8 flake8 pyflakes isort tox git-review
 # Install my VIM IDE
 cp vimrc -O $HOME/.vimrc
 vim -E -u $HOME/.vimrc +qall
+
+# Geek term
+brew install romkatv/powerlevel10k/powerlevel10k
