@@ -17,3 +17,4 @@ vim -E -u $HOME/.vimrc +qall
 
 # Geek term
 brew install romkatv/powerlevel10k/powerlevel10k
+cp vscode_settings.json ~/Library/Application Support/Code/User/settings.json
